@@ -1,0 +1,174 @@
+{
+    "plugins": ["import", "prettier", "jest", "react", "react-hooks"],
+    "extends": [
+      "@react-native-community",
+      "eslint:recommended",
+      "plugin:jest/recommended",
+      "plugin:react/recommended",
+      "prettier",
+      "plugin:import/errors",
+      "plugin:import/warnings"
+    ],
+    "env": {
+      "browser": true,
+      "node": true,
+      "jest": true,
+      "es6": true
+    },
+    "globals": {
+      "page": true,
+      "browser": true,
+      "context": true
+    },
+    "rules": {
+      "import/order": [
+        "error",
+        {
+          "groups": [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index"
+          ]
+        }
+      ],
+      "no-prototype-builtins": "off",
+      "no-unused-vars": [
+        "error",
+        {
+          "varsIgnorePattern": "_",
+          "argsIgnorePattern": "_",
+          "caughtErrorsIgnorePattern": "_"
+        }
+      ],
+      "import/named": "off",
+      "import/namespace": "off",
+      "import/first": "error",
+      "import/no-default-export": "warn",
+      "import/newline-after-import": "error",
+      "import/no-extraneous-dependencies": "error",
+      "react/prop-types": "off",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "error",
+      "no-nested-ternary": "error",
+      "no-template-curly-in-string": "error",
+      "guard-for-in": "error",
+      "no-alert": "error",
+      "no-caller": "error",
+      "no-eval": "error",
+      "no-console": "error",
+      "yoda": ["error", "never"],
+      "prefer-template": "error",
+      "eqeqeq": ["error", "smart"],
+      "default-case": "error",
+      "unicode-bom": "error",
+      "prefer-const": "error",
+      "padding-line-between-statements": [
+        "error",
+        {
+          "blankLine": "always",
+          "prev": "*",
+          "next": "return"
+        }
+      ],
+      "react/display-name": "off",
+      "react/no-deprecated": "error",
+      "react/no-access-state-in-setstate": "error",
+      "react/no-this-in-sfc": "error",
+      "react/jsx-sort-props": [
+        "error",
+        {
+          "ignoreCase": true,
+          "callbacksLast": true,
+          "reservedFirst": true
+        }
+      ],
+      "react/sort-comp": "error",
+      "jest/consistent-test-it": "error",
+      "jest/expect-expect": "error",
+      "jest/no-export": "error",
+      "jest/no-mocks-import": "error",
+      "jest/prefer-to-have-length": "error",
+      "jest/prefer-to-contain": "error",
+      "jest/prefer-todo": "error",
+      "jest/require-top-level-describe": "error"
+    },
+    "overrides": [
+      {
+        "files": ["**/*.{ts,tsx}"],
+        "settings": {
+          "import/parsers": {
+            "@typescript-eslint/parser": [".ts", ".tsx"]
+          },
+          "react": {
+            "version": "detect"
+          }
+        },
+        "plugins": ["@typescript-eslint"],
+        "extends": [
+          "plugin:@typescript-eslint/eslint-recommended",
+          "plugin:@typescript-eslint/recommended",
+          "plugin:@typescript-eslint/recommended-requiring-type-checking",
+          "plugin:import/typescript"
+        ],
+        "rules": {
+          "@typescript-eslint/ban-ts-ignore": "off",
+          "@typescript-eslint/await-thenable": "off",
+          "@typescript-eslint/no-empty-function": "off",
+          "@typescript-eslint/no-misused-promises": "off",
+          "@typescript-eslint/no-explicit-any": "off",
+          "@typescript-eslint/prefer-regexp-exec": "off",
+          "@typescript-eslint/prefer-interface": "off",
+          "@typescript-eslint/explicit-function-return-type": "off",
+          "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+              "varsIgnorePattern": "_",
+              "argsIgnorePattern": "_",
+              "caughtErrorsIgnorePattern": "_"
+            }
+          ],
+          "@typescript-eslint/prefer-string-starts-ends-with": "error",
+          "@typescript-eslint/consistent-type-assertions": [
+            "error",
+            {
+              "assertionStyle": "as",
+              "objectLiteralTypeAssertions": "allow-as-parameter"
+            }
+          ]
+        },
+        "parser": "@typescript-eslint/parser",
+        "parserOptions": {
+          "ecmaFeatures": {
+            "jsx": true
+          },
+          "createDefaultProgram": true,
+          "project": "./tsconfig.json"
+        }
+      },
+      {
+        "files": ["**/*.{js,jsx}"],
+        "settings": {
+          "react": {
+            "version": "detect"
+          }
+        },
+        "parser": "babel-eslint",
+        "parserOptions": {
+          "sourceType": "module",
+          "ecmaFeatures": {
+            "jsx": true
+          }
+        }
+      },
+      {
+        "files": ["**/*.stories.{js,jsx,ts,tsx}"],
+        "rules": {
+          "import/no-default-export": "off"
+        }
+      }
+    ]
+  }
+  
